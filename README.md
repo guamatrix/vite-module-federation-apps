@@ -8,3 +8,4 @@ This project shows how to use vite with module federation to embedd remote apps 
 - Svelte
 - vite-plugin-federation
 - Vue
+- Solid
