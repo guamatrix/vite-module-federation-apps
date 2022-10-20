@@ -4,6 +4,7 @@ import viteLogo from '/vite-host.svg'
 import styles from  './App.module.css'
 import RemoteWrapper from './components/RemoteWrapper'
 import RemoteWrapperVue from './components/RemoteWrapperVue'
+import RemoteWrapperSolid from './components/RemoteWrapperSolid'
 
 const RemoteApp = React.lazy(() => import('remote_app/RemoteApp'))
 
@@ -30,6 +31,7 @@ function App() {
       </React.Suspense>
       <RemoteWrapper name='Remote Svelte' path='remote_svelte/RemoteWrapper' />
       <RemoteWrapperVue name='Remote Vue' path='remote_vue/RemoteWrapper' />
+      <RemoteWrapperSolid name='Remote Solid' path='remote_solid/RemoteWrapper' />
     </div>
   </div>)
 }
