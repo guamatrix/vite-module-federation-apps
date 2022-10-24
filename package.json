@@ -1,0 +1,21 @@
+{
+  "name": "vite-module-federation",
+  "private": "false",
+  "version": "0.0.1",
+  "repository": "https://github.com/guamatrix/vite-module-federation-apps",
+  "workspaces": [
+    "./host-app",
+    "./remote-app",
+    "./remote-solid",
+    "./remote-svelte",
+    "./remote-vue"
+  ],
+  "scripts": {
+    "deploy-host": "npm run deploy --workspace host-app",
+    "build-remotes": "npm run build --workspaces",
+    "deploy-remote-app": "npm run deploy --workspace remote-app",
+    "deploy-remote-solid": "npm run deploy --workspace remote-solid",
+    "deploy-remote-svelte": "npm run deploy --workspace remote-svelte",
+    "deploy-remote-vue": "npm run deploy --workspace remote-vue"
+  }
+}
