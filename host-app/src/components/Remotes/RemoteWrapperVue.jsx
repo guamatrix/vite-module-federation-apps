@@ -1,23 +1,24 @@
 import React from 'react'
-import styles from '../App.module.css'
+import styles from '../../App.module.css'
 
-const RemoteWrapper = ({ path, name }) => {
+const RemoteWrapperVue = ({ path, name }) => {
   const [fetching, setFetchiing] = React.useState(true)
   const containerRef = React.useRef(null)
   React.useEffect(() => {
-    import('remote_svelte/RemoteWrapper')
+    import('remote_vue/utils')
       .then((module) => {
-        module.default(containerRef.current)
+        module.default.appWrapper(containerRef.current)
         setFetchiing(false)
       })
   }, [])
 
-  return (
+  return (<>
     <div className={styles.app} ref={containerRef}>
-      {fetching && <h1>Loading {name} ...</h1>}
     </div>
+    {fetching && <h1>Loading {name} ...</h1>}
+    </>
   )
 }
 
-export default RemoteWrapper
+export default RemoteWrapperVue
   

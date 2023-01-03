@@ -25,7 +25,10 @@ export default defineConfig({
         },
         remote_solid: {
           external: 'http://127.0.0.1:4013/assets/remoteEntry.js'
-        }        
+        },
+        remote_library: {
+          external: 'http://127.0.0.1:4014/assets/remoteEntry.js'
+        }    
       },
       shared: {
         react: { singletone: true },

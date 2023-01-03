@@ -16,8 +16,13 @@ export default defineConfig({
       name: 'remote-vue',
       filename: 'remoteEntry.js',
       exposes: {
-        './RemoteWrapper': './src/utils/appWrapper.js'
-      }
+        './utils': './src/utils/index.js'
+      },
+      remotes: {
+        remote_library: {
+          external: 'http://127.0.0.1:4014/assets/remoteEntry.js'
+        }
+      }      
     })
   ],
   build: {

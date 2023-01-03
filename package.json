@@ -8,7 +8,8 @@
     "./remote-app",
     "./remote-solid",
     "./remote-svelte",
-    "./remote-vue"
+    "./remote-vue",
+    "./remote-library"
   ],
   "scripts": {
     "deploy-host": "npm run deploy --workspace host-app",
@@ -16,6 +17,7 @@
     "deploy-remote-app": "npm run deploy --workspace remote-app",
     "deploy-remote-solid": "npm run deploy --workspace remote-solid",
     "deploy-remote-svelte": "npm run deploy --workspace remote-svelte",
-    "deploy-remote-vue": "npm run deploy --workspace remote-vue"
+    "deploy-remote-vue": "npm run deploy --workspace remote-vue",
+    "deploy-remote-library": "npm run deploy --workspace remote-library"
   }
 }

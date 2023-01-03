@@ -16,7 +16,12 @@ export default defineConfig({
       name: 'remote-solid',
       filename: 'remoteEntry.js',
       exposes: {
-        './RemoteWrapper': './src/utils/appWrapper.jsx'
+        './utils': './src/utils/index.js'
+      },
+      remotes: {
+        remote_library: {
+          external: 'http://127.0.0.1:4014/assets/remoteEntry.js'
+        }
       }
     })
   ],

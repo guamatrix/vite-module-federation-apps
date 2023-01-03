@@ -2,9 +2,8 @@ import React from 'react'
 import reactLogo from './assets/react-host.svg'
 import viteLogo from '/vite-host.svg'
 import styles from  './App.module.css'
-import RemoteWrapper from './components/RemoteWrapper'
-import RemoteWrapperVue from './components/RemoteWrapperVue'
-import RemoteWrapperSolid from './components/RemoteWrapperSolid'
+import { RemoteWrapperSvelte, RemoteWrapperVue, RemoteWrapperSolid }  from './components/Remotes'
+import { EventManager } from 'remote_library/utils' 
 
 const RemoteApp = React.lazy(() => import('remote_app/RemoteApp'))
 
@@ -22,6 +21,9 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+        <button onClick={() => EventManager.emit('state', 999)}>
+          Update Remote Apps
+        </button>
       </div>
     <div className={styles['remote-apps']}>
       <React.Suspense fallback={<h1>Loading Remote React ...</h1>}>
@@ -29,7 +31,7 @@ function App() {
           <RemoteApp />
         </div>
       </React.Suspense>
-      <RemoteWrapper name='Remote Svelte' path='remote_svelte/RemoteWrapper' />
+      <RemoteWrapperSvelte name='Remote Svelte' path='remote_svelte/RemoteWrapper' />
       <RemoteWrapperVue name='Remote Vue' path='remote_vue/RemoteWrapper' />
       <RemoteWrapperSolid name='Remote Solid' path='remote_solid/RemoteWrapper' />
     </div>

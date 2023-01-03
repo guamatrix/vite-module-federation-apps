@@ -20,6 +20,11 @@ export default defineConfig({
       exposes: {
         './RemoteApp': './src/App.jsx'
       },
+      remotes: {
+        remote_library: {
+          external: 'http://127.0.0.1:4014/assets/remoteEntry.js'
+        }
+      },      
       shared: {
         react: { singletone: true },
         'react-dom': { singletone: true }
